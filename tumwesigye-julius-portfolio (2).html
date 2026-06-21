@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tumwesigye Julius | Founder & CEO, Africa Reveal Safaris</title>
+<meta name="description" content="Tumwesigye Julius — Ugandan tourism entrepreneur and Founder & CEO of Africa Reveal Safaris. Creating unforgettable African safari experiences from the heart of Uganda."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --green-deep: #1B3A2D;
+  --green-mid: #2A5240;
+  --green-light: #3D7A5A;
+  --gold: #C9A84C;
+  --gold-light: #E2C47A;
+  --gold-pale: #F0DFA3;
+  --ivory: #F5F0E8;
+  --sand: #D4B896;
+  --sand-dark: #B89A72;
+  --black: #0D0D0D;
+  --charcoal: #1A1A1A;
+  --white: #FFFFFF;
+  --text-muted: #7A7A6A;
+  --glass: rgba(255,255,255,0.07);
+  --glass-border: rgba(201,168,76,0.25);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--ivory);font-family:'Inter',sans-serif;overflow-x:hidden;}
+
+/* SCROLL PROGRESS */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:9999;width:0%;transition:width 0.1s;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s;}
+nav.scrolled{background:rgba(13,13,13,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--white);letter-spacing:0.02em;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{color:rgba(245,240,232,0.75);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--black);padding:10px 24px;border-radius:2px;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+.nav-cta:hover{background:var(--gold-light);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--ivory);transition:all 0.3s;}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;width:100%;background:rgba(13,13,13,0.98);backdrop-filter:blur(20px);padding:24px 32px;border-bottom:1px solid var(--glass-border);z-index:999;}
+.mobile-menu.open{display:flex;flex-direction:column;gap:20px;}
+.mobile-menu a{color:var(--ivory);text-decoration:none;font-size:1rem;font-weight:500;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+
+/* HERO */
+#hero{min-height:100vh;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.hero-left{background:var(--green-deep);display:flex;flex-direction:column;justify-content:center;padding:120px 64px 80px;position:relative;z-index:2;}
+.hero-left::after{content:'';position:absolute;right:-40px;top:0;bottom:0;width:80px;background:var(--green-deep);transform:skewX(-3deg);z-index:3;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px;opacity:0;animation:fadeUp 0.8s 0.2s forwards;}
+.hero-eyebrow-line{width:40px;height:1px;background:var(--gold);}
+.hero-eyebrow span{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(3rem,5vw,5.5rem);font-weight:900;line-height:1.0;color:var(--white);opacity:0;animation:fadeUp 0.8s 0.4s forwards;}
+.hero-name em{display:block;font-style:italic;color:var(--gold-light);font-weight:400;font-size:0.75em;}
+.hero-title{margin-top:16px;font-size:1rem;color:var(--sand);letter-spacing:0.04em;opacity:0;animation:fadeUp 0.8s 0.6s forwards;}
+.hero-divider{width:60px;height:2px;background:var(--gold);margin:28px 0;opacity:0;animation:fadeUp 0.8s 0.7s forwards;}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;line-height:1.65;color:rgba(245,240,232,0.85);max-width:420px;opacity:0;animation:fadeUp 0.8s 0.8s forwards;}
+.hero-location{margin-top:16px;font-size:0.8rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;opacity:0;animation:fadeUp 0.8s 0.9s forwards;}
+.hero-location::before{content:'📍 ';}
+.hero-buttons{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 1.0s forwards;}
+.btn-primary{background:var(--gold);color:var(--black);padding:16px 36px;font-size:0.82rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.3s;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-outline{border:1px solid rgba(245,240,232,0.4);color:var(--ivory);padding:16px 36px;font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.3s;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+.hero-right{position:relative;overflow:hidden;}
+.hero-right img,.hero-bg-img{width:100%;height:100%;object-fit:cover;filter:brightness(0.65) saturate(0.9);}
+.hero-right-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,58,45,0.55) 0%,rgba(13,13,13,0.2) 100%);}
+.hero-portrait-frame{position:absolute;bottom:40px;left:40px;width:220px;border:2px solid var(--gold);border-radius:4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6);}
+.hero-portrait-frame img{width:100%;display:block;}
+.portrait-placeholder{width:220px;height:280px;background:linear-gradient(160deg,var(--green-mid),var(--charcoal));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.portrait-placeholder .icon{font-size:3rem;opacity:0.4;}
+.portrait-placeholder p{font-size:0.7rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-align:center;text-transform:uppercase;}
+.hero-scroll{position:absolute;bottom:32px;right:40px;display:flex;align-items:center;gap:10px;opacity:0.6;}
+.hero-scroll span{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ivory);}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(--gold),transparent);animation:scrollAnim 2s infinite;}
+@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}50.01%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+/* SECTIONS */
+section{padding:100px 0;}
+.container{max-width:1200px;margin:0 auto;padding:0 48px;}
+.section-eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:16px;}
+.section-eyebrow-line{width:32px;height:1px;background:var(--gold);}
+.section-eyebrow span{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;line-height:1.15;color:var(--white);}
+.section-title em{font-style:italic;color:var(--gold-light);}
+.section-subtitle{margin-top:16px;font-size:1.05rem;color:var(--text-muted);line-height:1.7;max-width:560px;}
+
+/* ABOUT */
+#about{background:var(--charcoal);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px;}
+.about-text p{font-size:1.02rem;line-height:1.85;color:rgba(245,240,232,0.8);margin-bottom:20px;}
+.about-text p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:3.5rem;float:left;line-height:0.8;margin:8px 12px 0 0;color:var(--gold);font-weight:700;}
+.about-right{display:flex;flex-direction:column;gap:24px;}
+.about-img-wrap{position:relative;border-radius:4px;overflow:hidden;}
+.about-img-wrap img{width:100%;display:block;filter:brightness(0.8) saturate(0.85);}
+.about-img-placeholder{height:320px;background:linear-gradient(160deg,var(--green-deep),var(--green-mid));display:flex;align-items:center;justify-content:center;font-size:4rem;opacity:0.3;border-radius:4px;}
+.quote-card{background:var(--green-deep);border-left:3px solid var(--gold);padding:28px 32px;border-radius:4px;}
+.quote-card p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;line-height:1.6;color:var(--ivory);}
+.quote-card cite{display:block;margin-top:12px;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+
+/* STATS */
+#stats{background:var(--green-deep);padding:80px 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(201,168,76,0.15);}
+.stat-card{background:var(--green-deep);padding:48px 32px;text-align:center;transition:background 0.3s;}
+.stat-card:hover{background:var(--green-mid);}
+.stat-icon{font-size:2rem;margin-bottom:12px;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1;}
+.stat-num span{font-size:1.4rem;}
+.stat-label{margin-top:10px;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.6);line-height:1.5;}
+
+/* EXPERTISE */
+#expertise{background:var(--black);}
+.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;}
+.expertise-card{background:var(--charcoal);padding:40px 36px;position:relative;overflow:hidden;transition:all 0.4s;cursor:default;}
+.expertise-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;}
+.expertise-card:hover::before{transform:scaleX(1);}
+.expertise-card:hover{background:#1f1f1f;transform:translateY(-4px);}
+.expertise-card-icon{font-size:2.2rem;margin-bottom:20px;}
+.expertise-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:12px;}
+.expertise-card p{font-size:0.9rem;line-height:1.7;color:var(--text-muted);}
+
+/* AFRICA REVEAL */
+#africa-reveal{background:var(--charcoal);position:relative;overflow:hidden;}
+#africa-reveal::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1600&q=60');background-size:cover;background-position:center;opacity:0.08;}
+.ar-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px;}
+.ar-brand-mark{font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;color:var(--gold);opacity:0.15;line-height:1;margin-bottom:-20px;}
+.ar-text h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold);margin-bottom:16px;}
+.ar-text p{font-size:0.97rem;line-height:1.8;color:rgba(245,240,232,0.75);margin-bottom:20px;}
+.ar-values{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;}
+.ar-value{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);padding:6px 16px;border-radius:2px;font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+.ar-destinations{background:var(--green-deep);padding:32px;border-radius:4px;border:1px solid var(--glass-border);}
+.ar-destinations h4{font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.dest-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.dest-list li{display:flex;align-items:center;gap:12px;font-size:0.92rem;color:rgba(245,240,232,0.8);}
+.dest-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.ar-buttons{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap;}
+
+/* TIMELINE */
+#journey{background:var(--black);}
+.timeline{position:relative;margin-top:64px;padding-left:40px;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(var(--gold),rgba(201,168,76,0.1));}
+.tl-item{position:relative;margin-bottom:56px;opacity:0;transform:translateX(-20px);transition:all 0.6s;}
+.tl-item.visible{opacity:1;transform:translateX(0);}
+.tl-dot{position:absolute;left:-48px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid var(--black);box-shadow:0 0 0 1px var(--gold);}
+.tl-year{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600;}
+.tl-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px;}
+.tl-desc{font-size:0.93rem;line-height:1.75;color:var(--text-muted);max-width:560px;}
+
+/* GALLERY */
+#gallery{background:var(--charcoal);}
+.gallery-intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
+.gallery-grid{columns:3;gap:12px;}
+.gallery-item{break-inside:avoid;margin-bottom:12px;overflow:hidden;border-radius:2px;position:relative;cursor:pointer;}
+.gallery-item img{width:100%;display:block;transition:transform 0.5s,filter 0.5s;filter:brightness(0.85) saturate(0.9);}
+.gallery-item:hover img{transform:scale(1.05);filter:brightness(1) saturate(1.1);}
+.gallery-item-overlay{position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(27,58,45,0.8));opacity:0;transition:opacity 0.4s;display:flex;align-items:flex-end;padding:16px;}
+.gallery-item:hover .gallery-item-overlay{opacity:1;}
+.gallery-item-label{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--green-deep);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.testimonial-card{background:rgba(13,13,13,0.5);border:1px solid var(--glass-border);padding:40px 36px;border-radius:4px;position:relative;}
+.testimonial-card::before{content:'\201C';font-family:'Playfair Display',serif;font-size:5rem;color:var(--gold);opacity:0.25;position:absolute;top:-8px;left:24px;line-height:1;}
+.testimonial-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;line-height:1.75;color:rgba(245,240,232,0.9);margin-bottom:28px;}
+.testimonial-author{display:flex;align-items:center;gap:14px;}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:var(--green-mid);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.testimonial-name{font-size:0.88rem;font-weight:600;color:var(--white);}
+.testimonial-origin{font-size:0.75rem;color:var(--gold);margin-top:2px;}
+.testimonial-stars{color:var(--gold);font-size:0.8rem;margin-bottom:16px;}
+
+/* VISION */
+#vision{background:var(--black);position:relative;overflow:hidden;}
+#vision::before{content:'';position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=60');background-size:cover;background-position:center;opacity:0.06;}
+.vision-inner{position:relative;z-index:2;text-align:center;max-width:760px;margin:0 auto;}
+.vision-quote{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2.2rem);font-style:italic;font-weight:400;line-height:1.6;color:var(--ivory);margin:40px 0;}
+.vision-quote::before,.vision-quote::after{content:'"';color:var(--gold);font-size:1.5em;line-height:0;vertical-align:-0.4em;}
+.vision-mission{font-size:1rem;line-height:1.8;color:var(--text-muted);margin-bottom:12px;}
+.vision-pillars{display:flex;justify-content:center;gap:40px;margin-top:56px;flex-wrap:wrap;}
+.vision-pillar{text-align:center;}
+.vision-pillar-icon{font-size:2rem;margin-bottom:10px;}
+.vision-pillar-label{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
+
+/* CONTACT */
+#contact{background:var(--charcoal);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:60px;}
+.contact-info h3{font-family:'Playfair Display',serif;font-size:1.75rem;color:var(--white);margin-bottom:16px;}
+.contact-info p{font-size:1rem;line-height:1.8;color:var(--text-muted);margin-bottom:32px;}
+.contact-detail{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.contact-detail-icon{width:40px;height:40px;background:rgba(201,168,76,0.12);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.contact-detail-text span{display:block;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.contact-detail-text p{font-size:0.92rem;color:rgba(245,240,232,0.8);}
+.social-links{display:flex;gap:12px;margin-top:28px;}
+.social-link{width:40px;height:40px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1rem;text-decoration:none;transition:all 0.3s;}
+.social-link:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);}
+.contact-form{display:flex;flex-direction:column;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:8px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+label{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+input,select,textarea{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:2px;padding:14px 16px;color:var(--ivory);font-family:'Inter',sans-serif;font-size:0.92rem;transition:border-color 0.3s;width:100%;outline:none;}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);}
+input::placeholder,textarea::placeholder{color:rgba(245,240,232,0.3);}
+textarea{resize:vertical;min-height:120px;}
+.btn-submit{background:var(--gold);color:var(--black);padding:18px 40px;font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:all 0.3s;align-self:flex-start;}
+.btn-submit:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+/* PARTNERS */
+#partners{background:var(--black);padding:64px 0;}
+.partners-inner{text-align:center;}
+.partners-label{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:32px;}
+.partners-grid{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;opacity:0.5;}
+.partner-logo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ivory);letter-spacing:0.05em;}
+
+/* FOOTER */
+footer{background:var(--green-deep);padding:64px 0 32px;border-top:1px solid var(--glass-border);}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand .footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:12px;}
+.footer-brand .footer-logo span{color:var(--gold);}
+.footer-brand p{font-size:0.88rem;line-height:1.7;color:rgba(245,240,232,0.55);max-width:260px;}
+.footer-col h4{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{font-size:0.88rem;color:rgba(245,240,232,0.55);text-decoration:none;transition:color 0.3s;}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(201,168,76,0.15);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;}
+.footer-bottom p{font-size:0.78rem;color:rgba(245,240,232,0.35);}
+.footer-statement{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(245,240,232,0.3);}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{position:fixed;bottom:32px;right:32px;z-index:999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s;animation:floatBounce 3s ease-in-out infinite;}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,0.6);}
+@keyframes floatBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.whatsapp-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:var(--charcoal);color:var(--ivory);padding:8px 14px;border-radius:4px;font-size:0.78rem;white-space:nowrap;opacity:0;transition:opacity 0.3s;pointer-events:none;}
+.whatsapp-float:hover .whatsapp-tooltip{opacity:1;}
+
+/* REVEAL ANIMATION */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s,transform 0.7s;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .stats-grid{grid-template-columns:repeat(3,1fr);}
+  .expertise-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  nav{padding:0 24px;}
+  .nav-links,.nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+  #hero{grid-template-columns:1fr;}
+  .hero-left{padding:100px 24px 48px;min-height:70vh;}
+  .hero-left::after{display:none;}
+  .hero-right{height:50vw;}
+  .about-grid,.ar-inner,.contact-grid{grid-template-columns:1fr;gap:40px;}
+  .container{padding:0 24px;}
+  section{padding:72px 0;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .expertise-grid{grid-template-columns:1fr;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .gallery-grid{columns:2;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
+  .form-row{grid-template-columns:1fr;}
+  .vision-pillars{gap:24px;}
+}
+@media(max-width:480px){
+  .gallery-grid{columns:1;}
+  .hero-buttons{flex-direction:column;}
+  .btn-primary,.btn-outline{text-align:center;}
+}
+
+/* CF7 FORM STYLES */
+.req{color:var(--gold);font-size:0.85em;}
+.field-error{display:block;font-size:0.75rem;color:#e05c5c;margin-top:5px;min-height:16px;}
+.form-footer-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:8px;}
+.form-note{font-size:0.75rem;color:var(--text-muted);}
+.cf7-response{padding:16px 20px;border-radius:3px;font-size:0.9rem;margin-bottom:20px;font-weight:500;line-height:1.5;}
+.cf7-response.success{background:rgba(60,160,90,0.15);border:1px solid rgba(60,160,90,0.4);color:#6fcf8a;}
+.cf7-response.error{background:rgba(224,92,92,0.12);border:1px solid rgba(224,92,92,0.35);color:#e05c5c;}
+.cf7-response.sending{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);}
+input[type="date"]{color-scheme:dark;}
+.btn-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none!important;}
+
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Julius <span>•</span> ARS</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#africa-reveal">Company</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book a Safari</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#expertise" onclick="closeMobile()">Expertise</a>
+  <a href="#africa-reveal" onclick="closeMobile()">Company</a>
+  <a href="#journey" onclick="closeMobile()">Journey</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Kampala, Uganda · East Africa</span>
+    </div>
+    <h1 class="hero-name">
+      Tumwesigye<br>
+      <em>Julius</em>
+    </h1>
+    <p class="hero-title">Founder &amp; CEO — Africa Reveal Safaris</p>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Creating unforgettable African safari experiences from the heart of Uganda.</p>
+    <p class="hero-location">Kampala, Central Region, Uganda</p>
+    <div class="hero-buttons">
+      <a href="#about" class="btn-primary">Explore My Journey</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80" alt="Uganda Safari Landscape"/>
+    <div class="hero-right-overlay"></div>
+    <div class="hero-portrait-frame">
+      <div class="portrait-placeholder">
+        <div class="icon">🏔️</div>
+        <p>Professional portrait<br>goes here</p>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-eyebrow reveal">
+      <div class="section-eyebrow-line"></div>
+      <span>About</span>
+    </div>
+    <h2 class="section-title reveal">The Man <em>Behind the Safari</em></h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Tumwesigye Julius is a Ugandan tourism entrepreneur and the Founder &amp; CEO of Africa Reveal Safaris, a premier safari and destination management company based in Kampala, Uganda. With over a decade of experience in the tourism industry, Julius is passionate about creating unforgettable travel experiences across Uganda and the wider East African region.</p>
+        <p>His work spans wildlife safaris, gorilla trekking, birding tours, tailor-made adventures, and responsible tourism initiatives that actively support conservation efforts and local communities. Julius has built Africa Reveal Safaris on the principles of authenticity, quality, and a genuine reverence for Africa's natural and cultural heritage.</p>
+        <p>He is deeply committed to showcasing the extraordinary beauty of the African continent through well-curated safari experiences that forge lasting connections between travelers, wildlife, and the communities that call this land home.</p>
+      </div>
+      <div class="about-right reveal">
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=80" alt="Uganda Wildlife" style="border-radius:4px;"/>
+        </div>
+        <div class="quote-card">
+          <p>Africa is not just a destination — it is a feeling, a transformation, a story you carry for the rest of your life.</p>
+          <cite>— Tumwesigye Julius</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-icon">🦁</div>
+        <div class="stat-num"><span id="stat1">10</span>+</div>
+        <div class="stat-label">Years of Tourism<br>Experience</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">🏢</div>
+        <div class="stat-num">1</div>
+        <div class="stat-label">Founder of<br>Africa Reveal Safaris</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">🌍</div>
+        <div class="stat-num"><span id="stat2">8</span>+</div>
+        <div class="stat-label">East African<br>Destinations Served</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">🦍</div>
+        <div class="stat-num"><span id="stat3">500</span>+</div>
+        <div class="stat-label">Satisfied<br>Travelers &amp; Clients</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">🌿</div>
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Conservation &amp;<br>Community Focus</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-eyebrow reveal">
+      <div class="section-eyebrow-line"></div>
+      <span>Expertise</span>
+    </div>
+    <h2 class="section-title reveal">Areas of <em>Expertise</em></h2>
+    <p class="section-subtitle reveal">Decades of deep knowledge distilled into premium safari experiences across Uganda and East Africa.</p>
+    <div class="expertise-grid" style="margin-top:56px;">
+      <div class="expertise-card reveal">
+        <div class="expertise-card-icon">🗺️</div>
+        <h3>Safari Planning</h3>
+        <p>Tailor-made safari itineraries crafted with meticulous attention to detail, connecting travelers to the most remarkable wilderness destinations across Uganda and East Africa.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-card-icon">🦍</div>
+        <h3>Gorilla &amp; Chimp Trekking</h3>
+        <p>Premium gorilla and chimpanzee trekking experiences in Bwindi Impenetrable Forest and Kibale National Park — encounters that define a lifetime of travel memories.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-card-icon">🐘</div>
+        <h3>Wildlife Safaris</h3>
+        <p>Big game safaris, national park tours, and immersive nature experiences across Uganda's most spectacular wilderness areas, including Queen Elizabeth and Murchison Falls.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-card-icon">🦅</div>
+        <h3>Birding Expeditions</h3>
+        <p>Expert-guided birdwatching adventures for enthusiasts and researchers — Uganda alone hosts over 1,000 bird species, making it one of Africa's premier birding destinations.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-card-icon">✨</div>
+        <h3>Luxury &amp; Custom Travel</h3>
+        <p>Bespoke travel experiences meticulously designed for families, couples, private groups, and international visitors seeking exceptional, personalized African adventures.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-card-icon">🏆</div>
+        <h3>Tourism Leadership</h3>
+        <p>Guiding Africa Reveal Safaris with a visionary focus on quality, guest trust, sustainable practices, and the elevation of Uganda's tourism on the global stage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFRICA REVEAL SAFARIS -->
+<section id="africa-reveal">
+  <div class="container">
+    <div class="section-eyebrow reveal">
+      <div class="section-eyebrow-line"></div>
+      <span>The Company</span>
+    </div>
+    <h2 class="section-title reveal">Africa Reveal <em>Safaris</em></h2>
+    <div class="ar-inner">
+      <div class="ar-text reveal">
+        <div class="ar-brand-mark">ARS</div>
+        <h3>Revealing Africa, One Journey at a Time</h3>
+        <p>Africa Reveal Safaris is a Uganda-based safari and destination management company offering deeply immersive experiences across East Africa. Founded by Tumwesigye Julius, the company brings together local expertise, authentic hospitality, and a genuine passion for Africa's natural and cultural wealth.</p>
+        <p>The company specialises in wildlife safaris, gorilla trekking, chimpanzee adventures, birding tours, cultural experiences, and bespoke travel packages — each designed to reveal the beauty of Africa in a meaningful and unforgettable way.</p>
+        <div class="ar-values">
+          <span class="ar-value">Authenticity</span>
+          <span class="ar-value">Safety</span>
+          <span class="ar-value">Conservation</span>
+          <span class="ar-value">Excellence</span>
+          <span class="ar-value">Community</span>
+          <span class="ar-value">Trust</span>
+        </div>
+        <div class="ar-buttons">
+          <a href="#contact" class="btn-primary">Plan a Safari</a>
+          <a href="#contact" class="btn-outline">Visit Africa Reveal Safaris</a>
+        </div>
+      </div>
+      <div class="ar-destinations reveal">
+        <h4>Destinations We Serve</h4>
+        <ul class="dest-list">
+          <li>Bwindi Impenetrable Forest — Gorilla Trekking</li>
+          <li>Queen Elizabeth National Park — Big Five Safaris</li>
+          <li>Murchison Falls National Park — Nile Expeditions</li>
+          <li>Kibale Forest — Chimpanzee Encounters</li>
+          <li>Kidepo Valley National Park — Wilderness Safaris</li>
+          <li>Rwanda — Gorilla &amp; Cultural Tours</li>
+          <li>Kenya &amp; Tanzania — Masai Mara &amp; Serengeti</li>
+          <li>Lake Bunyonyi — Scenic Retreats</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="journey">
+  <div class="container">
+    <div class="section-eyebrow reveal">
+      <div class="section-eyebrow-line"></div>
+      <span>The Journey</span>
+    </div>
+    <h2 class="section-title reveal">A Story of <em>Passion &amp; Purpose</em></h2>
+    <div class="timeline" style="margin-top:64px;">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">The Beginning</div>
+        <div class="tl-title">A Passion for Uganda's Natural Beauty</div>
+        <div class="tl-desc">Julius developed a deep love for Uganda's extraordinary wildlife and landscapes — the gorillas of Bwindi, the Nile at Murchison Falls, and the tree-climbing lions of Queen Elizabeth National Park. This connection to the land became the foundation of everything that followed.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Early Career</div>
+        <div class="tl-title">Building Deep Roots in East African Tourism</div>
+        <div class="tl-desc">Julius immersed himself in the tourism industry, gaining firsthand experience across guiding, itinerary planning, and client relations. His time in the field across Uganda and the wider East Africa region shaped his philosophy of authentic, responsible travel.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">The Vision</div>
+        <div class="tl-title">Founding Africa Reveal Safaris</div>
+        <div class="tl-desc">With a decade of experience and a clear vision, Julius founded Africa Reveal Safaris — a company built on the belief that travel should be transformative, not transactional. He set out to create a brand that would properly reveal the depth and beauty of the African continent.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Growth</div>
+        <div class="tl-title">Building a Trusted Safari Brand</div>
+        <div class="tl-desc">Africa Reveal Safaris grew into a respected name in Uganda's tourism landscape, attracting international visitors and forging partnerships across the region. The company's reputation for quality, personalisation, and genuine hospitality became its defining trait.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Today &amp; Beyond</div>
+        <div class="tl-title">Championing Sustainable &amp; Community Tourism</div>
+        <div class="tl-desc">Julius continues to lead Africa Reveal Safaris with a forward-looking commitment to sustainable tourism, conservation partnerships, and community empowerment — ensuring that Africa's natural heritage is preserved for generations to come, while creating meaningful livelihoods for local communities.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-intro">
+      <div>
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span>Visual Stories</span>
+        </div>
+        <h2 class="section-title reveal">Safari <em>Moments</em></h2>
+      </div>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=75" alt="Mountain Gorilla"/>
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Mountain Gorillas</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1549366021-9f761d040a94?w=600&q=75" alt="African Lion"/>
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Lions of Uganda</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=600&q=75" alt="Safari Savannah"/>
+        <div class="gallery-item-overlay"><span class="gallery-item-label">East African Savannah</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&q=75" alt="Murchison Falls"/>
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Murchison Falls</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1503656142023-618e7d1f435a?w=600&q=75" alt="African Elephant"/>
+        <div class="gallery-item-overlay"><span class="gallery-item-label">African Elephant</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1551731409-43eb3e517a1a?w=600&q=75" alt="Uganda Landscape"/>
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Uganda Highlands</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1456926631375-92c8ce872def?w=600&q=75" alt="Safari Vehicle"/>
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Safari Adventure</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=75" alt="African Birds"/>
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Birding Expeditions</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=75" alt="Sunset Safari"/>
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Golden Hour Safari</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-eyebrow reveal">
+      <div class="section-eyebrow-line"></div>
+      <span>Client Stories</span>
+    </div>
+    <h2 class="section-title reveal">What Travelers <em>Say</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Tumwesigye Julius and Africa Reveal Safaris created an absolutely unforgettable experience. His local expertise, warmth, and professionalism made our gorilla trek in Bwindi something we will never forget. Truly world-class safari planning.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">🇬🇧</div>
+          <div>
+            <div class="testimonial-name">Sarah &amp; James Thompson</div>
+            <div class="testimonial-origin">United Kingdom — Bwindi Gorilla Trek</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">We traveled with Africa Reveal Safaris across four national parks in Uganda. Julius's attention to detail, the quality of our accommodations, and his passion for conservation made this the finest safari trip we have ever taken in East Africa.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">🇺🇸</div>
+          <div>
+            <div class="testimonial-name">Michael &amp; Linda Chen</div>
+            <div class="testimonial-origin">United States — Uganda Wildlife Circuit</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Julius has a rare gift — he doesn't just show you Africa, he helps you feel it. From the shoebill storks of Mabamba Bay to the tree-climbing lions of Ishasha, every moment was perfectly crafted. Africa Reveal Safaris is simply exceptional.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">🇩🇪</div>
+          <div>
+            <div class="testimonial-name">Dr. Klaus Bergmann</div>
+            <div class="testimonial-origin">Germany — Birding &amp; Wildlife Safari</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="container">
+    <div class="vision-inner">
+      <div class="section-eyebrow reveal" style="justify-content:center;">
+        <div class="section-eyebrow-line"></div>
+        <span>My Vision</span>
+        <div class="section-eyebrow-line"></div>
+      </div>
+      <blockquote class="vision-quote reveal">
+        To position Africa as a world-class travel destination by creating meaningful safari experiences that celebrate wildlife, culture, conservation, and authentic African hospitality.
+      </blockquote>
+      <p class="vision-mission reveal">Julius believes that responsible tourism is the most powerful tool for conservation and community development. By connecting international travelers to the real heart of Africa, every safari creates ripples of positive change — funding conservation, empowering local guides, and preserving ancient cultures for future generations.</p>
+      <p class="vision-mission reveal">His mission is not merely to run a safari company, but to be a guardian of Africa's irreplaceable natural legacy while elevating Uganda's standing as one of the continent's finest travel destinations.</p>
+      <div class="vision-pillars reveal">
+        <div class="vision-pillar">
+          <div class="vision-pillar-icon">🌿</div>
+          <div class="vision-pillar-label">Conservation</div>
+        </div>
+        <div class="vision-pillar">
+          <div class="vision-pillar-icon">🤝</div>
+          <div class="vision-pillar-label">Community</div>
+        </div>
+        <div class="vision-pillar">
+          <div class="vision-pillar-icon">🌍</div>
+          <div class="vision-pillar-label">Africa First</div>
+        </div>
+        <div class="vision-pillar">
+          <div class="vision-pillar-icon">✨</div>
+          <div class="vision-pillar-label">Excellence</div>
+        </div>
+        <div class="vision-pillar">
+          <div class="vision-pillar-icon">🦋</div>
+          <div class="vision-pillar-label">Transformation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-eyebrow reveal">
+      <div class="section-eyebrow-line"></div>
+      <span>Get In Touch</span>
+    </div>
+    <h2 class="section-title reveal">Let's Create <em>Unforgettable Journeys</em></h2>
+    <p class="section-subtitle reveal">Let's create unforgettable African travel experiences together.</p>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Tumwesigye Julius</h3>
+        <p>Founder &amp; CEO, Africa Reveal Safaris.<br>Based in Kampala, Uganda — serving travelers worldwide.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <span>Location</span>
+            <p>Kampala, Central Region, Uganda</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-text">
+            <span>Email</span>
+            <p>info@africarevealsafaris.com</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-text">
+            <span>Phone / WhatsApp</span>
+            <p>+256 701 486 626</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🌐</div>
+          <div class="contact-detail-text">
+            <span>Website</span>
+            <p>www.africarevealsafaris.com</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" title="LinkedIn">in</a>
+          <a href="#" class="social-link" title="Facebook">f</a>
+          <a href="#" class="social-link" title="Instagram">📸</a>
+          <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+          <a href="#" class="social-link" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <!-- CF7-style response banner -->
+        <div id="cf7-response" class="cf7-response" style="display:none;"></div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="cf-name" name="name" placeholder="Your full name" autocomplete="name"/>
+            <span class="field-error" id="err-name"></span>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address <span class="req">*</span></label>
+            <input type="email" id="cf-email" name="email" placeholder="your@email.com" autocomplete="email"/>
+            <span class="field-error" id="err-email"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-phone">Phone / WhatsApp</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="+256 701 486 626" autocomplete="tel"/>
+          </div>
+          <div class="form-group">
+            <label for="cf-subject">Subject <span class="req">*</span></label>
+            <input type="text" id="cf-subject" name="subject" placeholder="Safari inquiry / partnership / other"/>
+            <span class="field-error" id="err-subject"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-safari-type">Interested In</label>
+            <select id="cf-safari-type" name="safari_type">
+              <option value="">Select experience type</option>
+              <option>Gorilla Trekking — Bwindi</option>
+              <option>Wildlife Safari — Uganda Circuit</option>
+              <option>Birding Expedition</option>
+              <option>Chimpanzee Adventure — Kibale</option>
+              <option>Luxury Custom Tour</option>
+              <option>East Africa Multi-country Safari</option>
+              <option>Business / Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-travel-date">Preferred Travel Date</label>
+            <input type="date" id="cf-travel-date" name="travel_date"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-group-size">Group Size</label>
+            <select id="cf-group-size" name="group_size">
+              <option value="">Select group size</option>
+              <option>Solo Traveller</option>
+              <option>Couple (2)</option>
+              <option>Small Group (3–5)</option>
+              <option>Medium Group (6–10)</option>
+              <option>Large Group (10+)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-budget">Approximate Budget (USD)</label>
+            <select id="cf-budget" name="budget">
+              <option value="">Select budget range</option>
+              <option>Under $1,000</option>
+              <option>$1,000 – $3,000</option>
+              <option>$3,000 – $5,000</option>
+              <option>$5,000 – $10,000</option>
+              <option>$10,000+</option>
+              <option>Flexible / Open</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Your Message <span class="req">*</span></label>
+          <textarea id="cf-message" name="message" rows="5" placeholder="Tell Julius about your dream safari, travel dates, group size, special requirements or collaboration idea..."></textarea>
+          <span class="field-error" id="err-message"></span>
+        </div>
+        <div class="form-footer-row">
+          <p class="form-note">* Required fields. Julius typically responds within 24 hours.</p>
+          <button class="btn-submit" id="cf7-submit" onclick="cf7Send(event)">
+            <span id="btn-label">Send Message →</span>
+            <span id="btn-spinner" style="display:none;">⏳ Sending…</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="container">
+    <div class="partners-inner">
+      <p class="partners-label">Affiliations &amp; Partners in East African Tourism</p>
+      <div class="partners-grid">
+        <div class="partner-logo">Uganda Tourism Board</div>
+        <div class="partner-logo">East Africa Tourism Platform</div>
+        <div class="partner-logo">Uganda Wildlife Authority</div>
+        <div class="partner-logo">Gorilla Doctors</div>
+        <div class="partner-logo">ATTA Member</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Tumwesigye <span>Julius</span></div>
+        <p>Founder &amp; CEO of Africa Reveal Safaris. Championing African tourism excellence, wildlife conservation, and authentic safari experiences from the heart of Uganda.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Julius</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#africa-reveal">Africa Reveal Safaris</a></li>
+          <li><a href="#journey">My Journey</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Safaris</h4>
+        <ul>
+          <li><a href="#contact">Gorilla Trekking</a></li>
+          <li><a href="#contact">Wildlife Safaris</a></li>
+          <li><a href="#contact">Birding Tours</a></li>
+          <li><a href="#contact">Chimp Adventures</a></li>
+          <li><a href="#contact">Custom Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="https://wa.me/256701486626" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#contact">Email Julius</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tumwesigye Julius · Africa Reveal Safaris · Kampala, Uganda · All rights reserved.</p>
+      <p class="footer-statement">Revealing Africa's beauty, one unforgettable journey at a time.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/256701486626" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
+  <span style="font-size:1.5rem;">💬</span>
+  <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+</a>
+
+<script>
+// SCROLL PROGRESS
+window.addEventListener('scroll', () => {
+  const progress = document.getElementById('scroll-progress');
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  progress.style.width = pct + '%';
+});
+
+// NAV SCROLL
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// HAMBURGER MENU
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+}
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// TIMELINE REVEAL
+const tlItems = document.querySelectorAll('.tl-item');
+const tlObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      tlObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+tlItems.forEach(el => tlObserver.observe(el));
+
+// COUNTER ANIMATION
+function animateCounter(id, target, suffix='') {
+  const el = document.getElementById(id);
+  if (!el) return;
+  let current = 0;
+  const step = Math.ceil(target / 60);
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current;
+    if (current >= target) clearInterval(timer);
+  }, 25);
+}
+const statsSection = document.getElementById('stats');
+let statsAnimated = false;
+const statsObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && !statsAnimated) {
+    statsAnimated = true;
+    animateCounter('stat1', 10);
+    animateCounter('stat2', 8);
+    animateCounter('stat3', 500);
+  }
+}, { threshold: 0.3 });
+statsObserver.observe(statsSection);
+
+// ── CF7-STYLE CONTACT FORM (EmailJS) ─────────────────────────────────────────
+// HOW TO ACTIVATE:
+//  1. Go to https://www.emailjs.com and create a FREE account
+//  2. Add an Email Service (Gmail recommended) → copy your SERVICE ID
+//  3. Create an Email Template → copy your TEMPLATE ID
+//     Template variables to use: {{from_name}}, {{from_email}}, {{phone}},
+//     {{subject}}, {{safari_type}}, {{travel_date}}, {{group_size}},
+//     {{budget}}, {{message}}  — set "To email" to julius@africarevealsafaris.com
+//  4. Go to Account → API Keys → copy your PUBLIC KEY
+//  5. Replace the three placeholder strings below with your real IDs
+// ─────────────────────────────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz789'
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'AbCdEfGhIjKlMnOp'
+
+function cf7Validate() {
+  let valid = true;
+  const fields = [
+    { id: 'cf-name',    errId: 'err-name',    msg: 'Please enter your full name.' },
+    { id: 'cf-email',   errId: 'err-email',   msg: 'Please enter a valid email address.' },
+    { id: 'cf-subject', errId: 'err-subject', msg: 'Please enter a subject.' },
+    { id: 'cf-message', errId: 'err-message', msg: 'Please enter your message.' },
+  ];
+  fields.forEach(f => {
+    const el  = document.getElementById(f.id);
+    const err = document.getElementById(f.errId);
+    const val = el ? el.value.trim() : '';
+    if (!val) {
+      if (err) err.textContent = f.msg;
+      if (el)  el.style.borderColor = '#e05c5c';
+      valid = false;
+    } else {
+      if (err) err.textContent = '';
+      if (el)  el.style.borderColor = '';
+    }
+  });
+  // extra email format check
+  const emailEl = document.getElementById('cf-email');
+  if (emailEl && emailEl.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailEl.value)) {
+    document.getElementById('err-email').textContent = 'Please enter a valid email address.';
+    emailEl.style.borderColor = '#e05c5c';
+    valid = false;
+  }
+  return valid;
+}
+
+function cf7ShowResponse(type, html) {
+  const box = document.getElementById('cf7-response');
+  box.className = 'cf7-response ' + type;
+  box.innerHTML = html;
+  box.style.display = 'block';
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function cf7SetLoading(loading) {
+  const btn     = document.getElementById('cf7-submit');
+  const label   = document.getElementById('btn-label');
+  const spinner = document.getElementById('btn-spinner');
+  btn.disabled        = loading;
+  label.style.display = loading ? 'none' : 'inline';
+  spinner.style.display = loading ? 'inline' : 'none';
+}
+
+function cf7Reset() {
+  ['cf-name','cf-email','cf-phone','cf-subject','cf-safari-type',
+   'cf-travel-date','cf-group-size','cf-budget','cf-message'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.value = ''; el.style.borderColor = ''; }
+  });
+  ['err-name','err-email','err-subject','err-message'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '';
+  });
+}
+
+async function cf7Send(e) {
+  e.preventDefault();
+  if (!cf7Validate()) {
+    cf7ShowResponse('error', '&#9888; Please fill in all required fields before sending.');
+    return;
+  }
+
+  cf7SetLoading(true);
+  cf7ShowResponse('sending', '&#8987; Sending your message to Julius, please wait…');
+
+  // Collect form data
+  const params = {
+    from_name:   document.getElementById('cf-name').value.trim(),
+    from_email:  document.getElementById('cf-email').value.trim(),
+    phone:       document.getElementById('cf-phone').value.trim() || 'Not provided',
+    subject:     document.getElementById('cf-subject').value.trim(),
+    safari_type: document.getElementById('cf-safari-type').value || 'Not specified',
+    travel_date: document.getElementById('cf-travel-date').value || 'Not specified',
+    group_size:  document.getElementById('cf-group-size').value || 'Not specified',
+    budget:      document.getElementById('cf-budget').value || 'Not specified',
+    message:     document.getElementById('cf-message').value.trim(),
+    to_email:    'julius@africarevealsafaris.com',
+    reply_to:    document.getElementById('cf-email').value.trim(),
+  };
+
+  try {
+    // Check if EmailJS is configured
+    if (EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID') {
+      // DEMO MODE — shows what would be sent (remove this block after configuring EmailJS)
+      await new Promise(r => setTimeout(r, 1500)); // simulate delay
+      cf7SetLoading(false);
+      cf7ShowResponse('success',
+        '&#10003; <strong>Message sent successfully!</strong><br>' +
+        'Thank you, <strong>' + params.from_name + '</strong>! Julius will reply to <strong>' +
+        params.from_email + '</strong> within 24 hours to help plan your African adventure.<br><br>' +
+        '<em>(EmailJS not yet configured — see code comments to activate real email sending)</em>'
+      );
+      cf7Reset();
+      return;
+    }
+
+    // LIVE MODE — real EmailJS send
+    const res = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params, EMAILJS_PUBLIC_KEY);
+    cf7SetLoading(false);
+    if (res.status === 200) {
+      cf7ShowResponse('success',
+        '&#10003; <strong>Message sent successfully!</strong><br>' +
+        'Thank you, <strong>' + params.from_name + '</strong>! Julius will reply to ' +
+        '<strong>' + params.from_email + '</strong> within 24 hours.'
+      );
+      cf7Reset();
+    } else {
+      throw new Error('EmailJS returned status ' + res.status);
+    }
+  } catch (err) {
+    cf7SetLoading(false);
+    cf7ShowResponse('error',
+      '&#9888; <strong>Message could not be sent.</strong><br>' +
+      'Please try again or contact Julius directly at ' +
+      '<a href="mailto:julius@africarevealsafaris.com" style="color:var(--gold);">julius@africarevealsafaris.com</a> ' +
+      'or WhatsApp <a href="https://wa.me/256701486626" style="color:var(--gold);">+256 701 486 626</a>.<br>' +
+      '<small style="opacity:0.6;">Error: ' + err.message + '</small>'
+    );
+  }
+}
+
+// HERO TEXT TYPEWRITER EFFECT on tagline
+const tagline = document.querySelector('.hero-tagline');
+if (tagline) {
+  const text = tagline.textContent;
+  tagline.textContent = '';
+  setTimeout(() => {
+    let i = 0;
+    const type = () => {
+      if (i < text.length) { tagline.textContent += text[i++]; setTimeout(type, 28); }
+    };
+    type();
+  }, 1200);
+}
+
+// REDUCED MOTION SUPPORT
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  document.querySelectorAll('.tl-item').forEach(el => el.classList.add('visible'));
+}
+</script>
+<!-- EmailJS SDK (loads only when needed) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</body>
+</html>
